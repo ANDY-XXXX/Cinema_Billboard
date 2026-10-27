@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Catálogo de películas clásicas y obras maestras del cine.">
+    <title>Archivo del Cine Clásico Universal</title>
+
+    <!-- Bootstrap 6 Alpha 1: CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
+    >
+</head>
+
+<body class="bg-dark text-light">
+    <header class="container">
+        <nav class=" container gap-3 navbar lg:navbar-expand shadow-sm py-3" data-bs-theme="dark">
+            <a class="navbar-brand fw-bold fs-4" href="#hero">
+                CineClásico<span class="fg-primary">.db</span>
+            </a>
+
+            <!-- En móvil, este botón abre el panel lateral -->
+            <button
+                class="navbar-toggler btn-icon"
+                type="button"
+                data-bs-toggle="drawer"
+                data-bs-target="#navbarDrawer"
+                aria-controls="navbarDrawer"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+
+            <dialog
+                class="d-flex flex-row mb-3 lg:drawer mt-5 ms-1"
+                id="navbarDrawer"
+                tabindex="-1"
+                aria-labelledby="navbarDrawerLabel"
+            >
+                <div class="drawer-header d-flex justify-content-between align-items-center">
+                    <h2 class="h5 mb-0" id="navbarDrawerLabel">Menú</h2>
+                    <button
+                        class="btn-close"
+                        type="button"
+                        data-bs-dismiss="drawer"
+                        data-bs-target="#navbarDrawer"
+                        aria-label="Cerrar menú"
+                    ></button>
+                </div>
+
+                <div class="drawer-body ol align-self-center mb-2 md:mb-0">
+                    <ul class="nav navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#hero">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#catalog">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#featured">Destacadas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Historia</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="align-items-center d-flex align-self-end gap-5">
+                    <form class="align-items-center d-flex gap-1" role="search" id="searchForm">
+                        <label class="p-2 flex-grow-1 visually-hidden text-center" for="movieSearch">Buscar película</label>
+                        <input
+                            class="form-control"
+                            id="movieSearch"
+                            name="q"
+                            type="search"
+                            placeholder="Buscar película"
+                            autocomplete="off"
+                        >
+                        <button class="btn-solid theme-accent" type="submit" aria-label="Buscar">
+                            <i class="bi bi-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <button class="btn-outline theme-warning" type="button" id="collectionButton">
+                        <i class="bi bi-bookmark-heart me-1" aria-hidden="true"></i>
+                        Mi colección
+                    </button>
+                </div>
+            </dialog>
+        </nav>
+    </header>
+
+    <section class="hero py-5 mb-4 border-bottom border-secondary" id="hero">
+        <div class="container text-center py-4">
+            <div class="hero-content mx-auto">
+                <span class="badge bg-primary text-uppercase px-3 py-2 mb-3 rounded-pill">
+                    Archivo Histórico Cinematográfico
+                </span>
+                <h1 class="display-5 fw-bold mb-3">
+                    Grandes obras maestras del séptimo arte
+                </h1>
+                <p class="lead text-light mb-3">
+                    Una travesía visual por los filmes que definieron el lenguaje narrativo,
+                    la dirección de arte y la banda sonora de la historia del cine.
+                </p>
+                <p class="text-secondary mb-4">
+                    Desde el expresionismo mudo de los años 20 hasta la revolución del color
+                    y la ciencia ficción de culto. Explora fichas técnicas, géneros y calificaciones.
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#catalog" class="btn btn-primary btn-lg px-4">Explorar catálogo</a>
+                    <a href="#featured" class="btn btn-outline-light btn-lg px-4">Ver destacadas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container py-4">
+        <section id="catalog" aria-labelledby="catalogTitle">
+            <div class="row mb-4">
+                <div class="col-12 lg:col-10">
+                    <h2 class="h2 fw-bold" id="catalogTitle">Catálogo principal de películas</h2>
+                    <p class="lead text-secondary mb-0">Fichas de obras clásicas del cine.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Película 1 -->
+                <article class="col-12 md:col-6 lg:col-4" data-movie="casablanca">
+                    <div class="card movie-card">
+                        <img
+                            src="IMG/CasaBlanca.jpg"
+                            class="img-fluid" 
+                            alt="Fotograma de Casablanca"
+                            loading="lazy"
+                        >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-warning">Clásico imperdible</span>
+                                <span class="btn-outline theme-warning" aria-label="Calificación 9.2 de 10">★ 9.2</span>
+                            </div>
+                            <span class="small text-primary mb-2">Drama / Romance</span>
+                            <h3 class="movie-title">Casablanca</h3>
+                            <p class="text-secondary small">Dirigida por <strong>Michael Curtiz</strong> (1942)</p>
+                            <p class="movie-description">
+                                En el Marruecos de la Segunda Guerra Mundial, el propietario de un club nocturno
+                                debe decidir si ayuda a su antiguo amor y a su esposo a ponerse a salvo.
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center gap-2">
+                            <span class="btn-outline theme-info">102 min</span>
+                            <button class="theme-success btn-outline btn btn-outline-primary btn-sm rounded-pill movie-details" type="button" data-title="Casablanca">Ver ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Película 2 -->
+                <article class="col-12 md:col-6 lg:col-4" data-movie="metropolis">
+                    <div class="card movie-card">
+                        <img
+                            src="IMG/Metropolis.jpeg"
+                            class="img-fluid" 
+                            alt="Fotograma de Metrópolis"
+                            loading="lazy"
+                        >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-warning">Expresionismo mudo</span>
+                                <span class="btn-outline theme-warning" aria-label="Calificación 8.3 de 10">★ 8.3</span>
+                            </div>
+                            <span class="small text-primary mb-2">Ciencia ficción / Silente</span>
+                            <h3 class="movie-title">Metrópolis</h3>
+                            <p class="text-secondary small">Dirigida por <strong>Fritz Lang</strong> (1927)</p>
+                            <p class="movie-description">
+                                En un futuro distópico dividido entre pensadores y trabajadores, el hijo del
+                                gobernante de la ciudad se enamora de una líder de la clase trabajadora.
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center gap-2">
+                            <span class="btn-outline theme-info">153 min</span>
+                            <button class="theme-success btn-outline btn btn-outline-primary btn-sm rounded-pill movie-details" type="button" data-title="Metrópolis">Ver ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Película 3 -->
+                <article class="col-12 md:col-6 lg:col-4" data-movie="ciudadano-kane">
+                    <div class="card movie-card">
+                        <img
+                            src="IMG/CiudadanoCanr.jpeg"
+                            class="img-fluid" 
+                            alt="Fotograma de Ciudadano Kane"
+                            loading="lazy"
+                        >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-warning">Innovación técnica</span>
+                                <span class="btn-outline theme-warning" aria-label="Calificación 8.9 de 10">★ 8.9</span>
+                            </div>
+                            <span class="small text-primary mb-2">Drama / Misterio</span>
+                            <h3 class="movie-title">Ciudadano Kane</h3>
+                            <p class="text-secondary small">Dirigida por <strong>Orson Welles</strong> (1941)</p>
+                            <p class="movie-description">
+                                Tras la muerte de un poderoso magnate de los medios de comunicación, un grupo
+                                de periodistas intenta descifrar el significado de sus últimas palabras: “Rosebud”.
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center gap-2">
+                            <span class="btn-outline theme-info">119 min</span>
+                            <button class="theme-success btn-outline btn btn-outline-primary btn-sm rounded-pill movie-details" type="button" data-title="Ciudadano Kane">Ver ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Película 4 -->
+                <article class="col-12 md:col-6 lg:col-4" data-movie="2001">
+                    <div class="card movie-card">
+                        <img
+                            src="IMG/OdiseaDelEspacio.jpg"
+                            cclass="img-fluid" 
+                            alt="Fotograma de 2001: Odisea del espacio"
+                            loading="lazy"
+                        >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-warning">Cine de culto</span>
+                                <span class="btn-outline theme-warning" aria-label="Calificación 9.0 de 10">★ 9.0</span>
+                            </div>
+                            <span class="small text-primary mb-2">Ciencia ficción / Filosófico</span>
+                            <h3 class="movie-title">2001: Odisea del espacio</h3>
+                            <p class="text-secondary small">Dirigida por <strong>Stanley Kubrick</strong> (1968)</p>
+                            <p class="movie-description">
+                                Una enigmática estructura influye en la evolución humana antes de que una nave
+                                espacial sea enviada a Júpiter bajo el control de la inteligencia artificial HAL 9000.
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center gap-2">
+                            <span class="btn-outline theme-info">149 min</span>
+                            <button class="theme-success btn-outline btn btn-sm rounded-pill movie-details" type="button" data-title="2001: Odisea del espacio">Ver ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Película 5 -->
+                <article class="col-12 md:col-6 lg:col-4" data-movie="cantar-bajo-la-lluvia">
+                    <div class="card movie-card">
+                        <img
+                            src="IMG/CantarBajoLaLluvia.jpg"
+                            class="img-fluid" 
+                            alt="Fotograma de Cantar bajo la lluvia"
+                            loading="lazy"
+                        >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-warning">Era dorada</span>
+                                <span class="btn-outline theme-warning" aria-label="Calificación 8.3 de 10">★ 8.3</span>
+                            </div>
+                            <span class="small text-primary mb-2">Musical / Comedia</span>
+                            <h3 class="movie-title">Cantar bajo la lluvia</h3>
+                            <p class="text-secondary small">Dirigida por <strong>Gene Kelly y Stanley Donen</strong> (1952)</p>
+                            <p class="movie-description">
+                                Una compañía de producción cinematográfica y sus estrellas hacen la difícil
+                                transición del cine mudo al sonoro en Hollywood a finales de los años 20.
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center gap-2">
+                            <span class="btn-outline theme-info">103 min</span>
+                            <button class="btn theme-success btn-outline btn-sm rounded-pill movie-details" type="button" data-title="Cantar bajo la lluvia">Ver ficha</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Película 6 -->
+                <article class="col-12 md:col-6 lg:col-4" data-movie="el-padrino">
+                    <div class="card movie-card">
+                        <img
+                            src="IMG/ElPadrino.jpeg"
+                            class="img-fluid" 
+                            alt="Fotograma de El Padrino"
+                            loading="lazy"
+                        >
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                                <span class="badge text-bg-warning">Obra cumbre</span>
+                                <span class="btn-outline theme-warning" aria-label="Calificación 9.2 de 10">★ 9.2</span>
+                            </div>
+                            <span class="small text-primary mb-2">Policial / Drama</span>
+                            <h3 class="movie-title">El Padrino</h3>
+                            <p class="text-secondary small">Dirigida por <strong>Francis Ford Coppola</strong> (1972)</p>
+                            <p class="movie-description">
+                                El envejecido patriarca de una dinastía familiar transfiere el control de su
+                                organización a su reacio hijo menor.
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center gap-2">
+                            <span class="btn-outline theme-info">175 min</span>
+                            <button class="btn theme-success btn-outline btn-sm rounded-pill movie-details" type="button" data-title="El Padrino">Ver ficha</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="featured" class="py-5" aria-labelledby="featuredTitle">
+            <div class="p-4 p-md-5 rounded-4 border border-secondary">
+                <h2 class="h3 fw-bold" id="featuredTitle">Películas destacadas</h2>
+                <p class="text-secondary mb-3">
+                    Explora las películas del catálogo y abre sus fichas para consultar más información.
+                </p>
+                <a class="btn btn-outline-light" href="#catalog">Volver al catálogo</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about" class="bg-dark text-light py-4 mt-4 border-top border-secondary">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center text-md-start">
+            <p class="mb-0 small text-secondary">
+                &copy; 2026 Archivo del Cine Clásico. Práctica académica de HTML y Bootstrap 6.
+            </p>
+            <nav aria-label="Enlaces complementarios" class="small">
+                <a href="#about" class="link-light px-1">Aviso legal</a>
+                <span aria-hidden="true">|</span>
+                <a href="https://developer.mozilla.org/es/" class="link-light px-1" target="_blank" rel="noopener noreferrer">Documentación MDN</a>
+                <span aria-hidden="true">|</span>
+                <a href="https://www.w3.org/" class="link-light px-1" target="_blank" rel="noopener noreferrer">W3C</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 6 Alpha usa JavaScript como módulo ES -->
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <script type="module" src="JS/script.js"></script>
+</body>
+</html>
