@@ -50,3 +50,12 @@ drawer.querySelectorAll('a[href^="#"]').forEach((link) => {
 		}
 	});
 });
+
+const drawerEl = document.getElementById('navbarDrawer');
+drawerEl.querySelectorAll('.nav-link').forEach(link => {
+	link.addEventListener('click', () => {
+		if (drawerEl.open) {
+		bootstrap.Drawer.getOrCreateInstance(drawerEl).hide();
+		}
+	});
+});
