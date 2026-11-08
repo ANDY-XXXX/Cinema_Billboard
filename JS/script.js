@@ -49,11 +49,7 @@ document.querySelectorAll(".movie-details").forEach((button) => {
 
 // Cierra el panel después de elegir una sección del menú en móvil.
 drawer.querySelectorAll('a[href^="#"]').forEach((link) => {
-	link.addEventListener("click", () => {
-    	if (window.matchMedia("(width < 992px)").matches && drawer.open) {
-        	closeDrawer();
-		}
-	});
+	link.addEventListener("click", closeDrawer)
 });
 
 const drawerEl = document.getElementById('navbarDrawer');
