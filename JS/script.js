@@ -3,6 +3,11 @@ const searchInput = document.querySelector("#movieSearch");
 const movieCards = document.querySelectorAll("[data-movie]");
 const collectionButton = document.querySelector("#collectionButton");
 const drawer = document.querySelector("#navbarDrawer");
+const closeButtom = drawer.querySelector('[data-bs-dismiss="drawer"]');
+
+function closeDrawer(){
+	if (drawer.open) closeButtom.click();
+}
 
 // Filtra las tarjetas por el título o género que escriba la persona.
 searchForm.addEventListener("submit", (event) => {
@@ -17,7 +22,7 @@ searchForm.addEventListener("submit", (event) => {
 
     // Si se busca desde el panel móvil, lo cerramos al enviar.
     if (drawer && typeof drawer.close === "function" && drawer.open) {
-        drawer.close();
+        closeDrawer();
     }
 });
 
@@ -46,7 +51,7 @@ document.querySelectorAll(".movie-details").forEach((button) => {
 drawer.querySelectorAll('a[href^="#"]').forEach((link) => {
 	link.addEventListener("click", () => {
     	if (window.matchMedia("(width < 992px)").matches && drawer.open) {
-        	drawer.close();
+        	closeDrawer();
 		}
 	});
 });
